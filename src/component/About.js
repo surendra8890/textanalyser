@@ -1,32 +1,33 @@
 import React,{useState} from "react"
-export default function About() {
+export default function About(props) {
     
-    // let mystyle={
-    //   color:'white',
-    //   backgroundColor:'black'
+  //  let mystyle={
+  //     color:'white',
+  //     backgroundColor:'black'
       
-    // }
-    const[mystyle,mystyle1]=useState({
-        color:'white',
-        background:'black'
-    })
-   const toggles=()=>{
-    if(mystyle.color=='white'){
-        mystyle1({
-            color:'black',
-            background:'white'
-        })
-    }
-    else{mystyle1({
-            color:'white',
-            background:'black'
-        })
+  //   }
+    const mystyle={
+        color:props.mode=='dark'?'white':'black',
+        background:props.mode=='dark' ? '#042743' :'white',
+      border:'2px solid'}
 
-    }
+  //  const toggles=()=>{
+  //   if(mystyle.color=='white'){
+  //       mystyle1({
+  //           color:'black',
+  //           background:'white'
+  //       })
+  //   }
+  //   else{mystyle1({
+  //           color:'white',
+  //           background:'black'
+  //       })
 
-    }
+  //   }
+
+  //   }
   return (
-    <div className="container" style={mystyle}>
+    <div className="container">
         <h1>About Us</h1>
         <div className="accordion" id="accordionPanelsStayOpenExample">
   <div className="accordion-item">
@@ -66,9 +67,9 @@ export default function About() {
     </div>
   </div>
 </div>
-<div>
+{/* <div>
     <button type="button" className="btn btn-danger my-3" onClick={toggles} >MODE</button>
-</div>
+</div> */}
       
     </div>
   )
